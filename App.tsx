@@ -6,7 +6,10 @@ import Play from './components/Play';
 
 
 export default function App() {
-  const [currentNote, setCurrentNote] = useState<string>('C');
+  const [scale, setScale] = useState<string>('C');
+
+  const notes = [{ "note": "C", "color": "#5f5a8b" }, { "note": "D", "color": "#a0cb5f" }, { "note": "E", "color": "#347ebf" }, { "note": "F", "color": "#cb5fa0" }, { "note": "G", "color": "#bf3434" }]
+
 
   return (
     <View style={styles.container}>
@@ -17,8 +20,8 @@ export default function App() {
         <Text style={styles.label}>Button</Text>
       </TouchableOpacity>  */}
       {/* <MovingElement/>  */}
-      {['C', 'D', 'E', 'F', 'G'].map((note) => (
-        <Play key={note} note={note} currentNote={currentNote} />
+      {notes.map((data, idx) => (
+        <Play key={idx} data={data} scale={scale} />
       ))}
     </View>
   );
