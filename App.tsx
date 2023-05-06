@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ActivityIndicator, Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { MY_KEY } from "@env"
-import MovingElement from './components/MovingElement';
 import Play from './components/Play';
-
 
 export default function App() {
   const [scale, setScale] = useState<string>('C');
@@ -15,11 +13,6 @@ export default function App() {
     <View style={styles.container}>
       <Text>Playground</Text>
       {/* <ActivityIndicator /> */}
-      {/* <TouchableOpacity
-        style={styles.button}>
-        <Text style={styles.label}>Button</Text>
-      </TouchableOpacity>  */}
-      {/* <MovingElement/>  */}
       {notes.map((data, idx) => (
         <Play key={idx} data={data} scale={scale} />
       ))}
@@ -33,15 +26,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  button: {
-    backgroundColor: '#3498db',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  label: {
-    color: '#fff',
-    fontWeight: 'bold',
   },
 });
