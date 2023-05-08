@@ -8,7 +8,6 @@ export default function App() {
 
   const notes = [{ "note": "C", "color": "#5f5a8b" }, { "note": "D", "color": "#a0cb5f" }, { "note": "E", "color": "#347ebf" }, { "note": "F", "color": "#cb5fa0" }, { "note": "G", "color": "#bf3434" }]
 
-
   return (
     <View style={styles.container}>
       <Text>Playground</Text>
